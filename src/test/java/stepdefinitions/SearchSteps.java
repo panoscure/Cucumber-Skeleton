@@ -22,6 +22,7 @@ public class SearchSteps {
         panoscurePage.enterSearchTerm(term);
     }
 
+
     @Then("I should be redirected to Panoscure home page and see {string}")
     public void i_should_see_expected_text(String expectedText) {
         String actual = panoscurePage.getMainText();
