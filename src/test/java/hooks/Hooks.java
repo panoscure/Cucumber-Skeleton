@@ -1,10 +1,10 @@
 package hooks;
 
+import driver.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import utils.ConfigReader;
+
 
 public class Hooks {
 
@@ -12,15 +12,13 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(ConfigReader.getProperty("url"));
+        driver = DriverManager.initializeDriver("chrome");
     }
 
     @After
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+            DriverManager.quitDriver();
         }
     }
 

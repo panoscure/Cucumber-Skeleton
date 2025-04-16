@@ -4,17 +4,25 @@ import hooks.Hooks;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import pages.PanoscureHomePage;
+import utils.ConfigReader;
+import utils.Logger;
 
-import static org.testng.Assert.assertEquals;
 
 public class SearchSteps {
 
     WebDriver driver = Hooks.getDriver();  // Static access
     PanoscureHomePage panoscurePage= new PanoscureHomePage(driver);
 
+
     @Given("I am on Panos page")
     public void i_am_on_panos_page() {
-        System.out.println("Panos Page");
+        String url = ConfigReader.getProperty("url");
+        driver.get(url);
+        Logger.debug("This is a debug message");
+        Logger.info("Everything is working fine");
+        Logger.warning("Something might need attention");
+        Logger.error("Something went wrong");
+        Logger.critical("Critical failure occurred");
     }
 
     @When("I search for {string}")
@@ -25,8 +33,9 @@ public class SearchSteps {
 
     @Then("I should be redirected to Panoscure home page and see {string}")
     public void i_should_see_expected_text(String expectedText) {
-        String actual = panoscurePage.getMainText();
-        assertEquals(actual, expectedText);
+        String actual_text = panoscurePage.getMainText();
+        panoscurePage.assertMainText(actual_text,expectedText);
+
         driver.quit();
     }
 

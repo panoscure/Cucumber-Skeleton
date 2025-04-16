@@ -9,5 +9,5 @@ Feature: Google search and redirection to Panoscure site
 
     Examples:
       | searchTerm | expectedText       |
-      | panoscure  | What's an embedded system? |
+      | Home  | What's an embedded system? |
       | synology   | About the AVR microcontroller|

@@ -2,13 +2,15 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import static org.testng.Assert.assertEquals;
+
 
 public class PanoscureHomePage {
 
     WebDriver driver;
 
     // Define top XPath constants here
-    public String homeTextXPath = "//h1[contains(text(),'System')]";
+    public String homeTextXPath = "(//span[@class='headertext1'])[1]";
     public String searchBoxXPath = "//*[@id=\"sidebar\"]/form/p[1]/input";
 
 
@@ -26,5 +28,9 @@ public class PanoscureHomePage {
 
     public void refreshCurrentPage() {
         driver.navigate().refresh();
+    }
+
+    public void assertMainText(String actual_text, String expectedText) {
+        assertEquals(actual_text, expectedText);
     }
 }
