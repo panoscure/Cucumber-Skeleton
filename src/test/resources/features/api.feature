@@ -9,4 +9,4 @@ Feature: Get Sensor Info API
     Examples:
       | terminal_id            | terminal_ip     | max_crontab | expected_message         |
       | ESP32c04e3080ca2c      | 192.168.2.10    | 5           | Data Successfully Sent   |
-      | ESP3230c6f79811c4      | 192.168.2.11    | 5           | Data Successfully Sent   |
+      | ESP327821848e59ec      | 192.168.2.11    | 5           | Data Successfully Sent   |
