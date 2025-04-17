@@ -8,7 +8,11 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/resources/features/api.feature"
         },
         glue = {"stepdefinitions"},
-        plugin = {"pretty", "html:target/cucumber-report.html"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-html-report",
+                "json:target/cucumber.json"
+        },
         monochrome = true
 )
 public class TestApiRunner extends AbstractTestNGCucumberTests {
