@@ -5,11 +5,11 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-                "src/test/resources/features/SearchPanoscure.feature"
+                "src/test/resources/features/api.feature"
         },
-        glue = {"stepdefinitions", "hooks"},
+        glue = {"stepdefinitions"},
         plugin = {"pretty", "html:target/cucumber-report.html"},
         monochrome = true
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestApiRunner extends AbstractTestNGCucumberTests {
 }

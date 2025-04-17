@@ -42,6 +42,12 @@
             <version>7.9.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Rest Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.1</version>
+        </dependency>
         <dependency>
             <groupId>org.athex</groupId>
             <artifactId>automation-core</artifactId>
