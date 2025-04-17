@@ -8,7 +8,11 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/resources/features/SearchPanoscure.feature"
         },
         glue = {"stepdefinitions", "hooks"},
-        plugin = {"pretty", "html:target/cucumber-report.html"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-html-report.html",
+                "json:target/cucumber.json"
+        },
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
