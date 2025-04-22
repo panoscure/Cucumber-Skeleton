@@ -12,6 +12,7 @@ public class PanoscureHomePage {
     // Define top XPath constants here
     public String homeTextXPath = "(//span[@class='headertext1'])[1]";
     public String searchBoxXPath = "//*[@id=\"sidebar\"]/form/p[1]/input";
+    public String clickTabXPath(String tab_name){ return "//a[text()='"+ tab_name +"']";}
 
 
     public PanoscureHomePage(WebDriver driver) {
@@ -32,5 +33,9 @@ public class PanoscureHomePage {
 
     public void assertMainText(String actual_text, String expectedText) {
         assertEquals(actual_text, expectedText);
+    }
+
+    public void clickTab(String tab_name) {
+        driver.findElement(By.xpath(clickTabXPath(tab_name))).click();
     }
 }

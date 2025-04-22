@@ -43,4 +43,14 @@ public class SearchSteps {
     public void iRefreshThePage() {
         panoscurePage.refreshCurrentPage();
     }
+
+    @And("I click tab {string}")
+    public void iClickTab(String tab_name) {
+        panoscurePage.clickTab(tab_name);
+        try {
+            Thread.sleep(10000); // Delay for 2 seconds (2000 milliseconds)
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
