@@ -10,8 +10,8 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"stepdefinitions", "hooks"},
         plugin = {
                 "pretty",
-                "html:target/cucumber-html-report.html",
-                "json:target/cucumber.json"
+                "html:target/cucumber-reports/html-report-TestRunner1.html",
+                "json:target/cucumber-reports/TestRunner1.json"
         },
         monochrome = true
 )

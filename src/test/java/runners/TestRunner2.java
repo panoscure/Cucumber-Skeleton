@@ -5,13 +5,13 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-                "src/test/resources/features/searchPanoscure2.feature"
+                "src/test/resources/features/SearchPanoscure2.feature"
         },
         glue = {"stepdefinitions", "hooks"},
         plugin = {
                 "pretty",
-                "html:target/cucumber-html-report.html",
-                "json:target/cucumber.json"
+                "html:target/cucumber-reports/html-report-TestRunner2.html",
+                "json:target/cucumber-reports/TestRunner2.json"
         },
         monochrome = true
 )
