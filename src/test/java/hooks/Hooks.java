@@ -4,15 +4,20 @@ import driver.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
+import utils.ConfigReader;
+
+import java.net.MalformedURLException;
 
 
 public class Hooks {
 
     private static WebDriver driver;
+    String executionMode = ConfigReader.getProperty("execution.mode");
+
 
     @Before
-    public void setUp() {
-        driver = DriverManager.initializeDriver("chrome");
+    public void setUp() throws MalformedURLException {
+        driver = DriverManager.initializeDriver("chrome",executionMode);
     }
 
     @After
