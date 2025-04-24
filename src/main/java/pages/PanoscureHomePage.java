@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utils.WaitUtils;
 import static org.testng.Assert.assertEquals;
 
 
@@ -20,11 +22,15 @@ public class PanoscureHomePage {
     }
 
     public void enterSearchTerm(String term) {
-        driver.findElement(By.xpath(searchBoxXPath)).sendKeys(term);
+        //driver.findElement(By.xpath(searchBoxXPath)).sendKeys(term);
+        WebElement searchBox = WaitUtils.waitForElement(driver, By.xpath(searchBoxXPath), 10);
+        searchBox.sendKeys(term);
     }
 
     public String getMainText() {
-        return driver.findElement(By.xpath(homeTextXPath)).getText();
+        WebElement text = WaitUtils.waitForElement(driver,By.xpath(homeTextXPath), 10);
+        return text.getText();
+        //return driver.findElement(By.xpath(homeTextXPath)).getText();
     }
 
     public void refreshCurrentPage() {
@@ -36,6 +42,8 @@ public class PanoscureHomePage {
     }
 
     public void clickTab(String tab_name) {
-        driver.findElement(By.xpath(clickTabXPath(tab_name))).click();
+        WebElement home_text = WaitUtils.waitForElement(driver,By.xpath(clickTabXPath(tab_name)), 10);
+        home_text.click();
+        //driver.findElement(By.xpath(clickTabXPath(tab_name))).click();
     }
 }
