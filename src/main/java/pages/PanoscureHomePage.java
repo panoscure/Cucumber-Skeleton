@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.ConfigReader;
 import utils.WaitUtils;
 import static org.testng.Assert.assertEquals;
 
@@ -23,12 +24,12 @@ public class PanoscureHomePage {
 
     public void enterSearchTerm(String term) {
         //driver.findElement(By.xpath(searchBoxXPath)).sendKeys(term);
-        WebElement searchBox = WaitUtils.waitForElement(driver, By.xpath(searchBoxXPath), 10);
+        WebElement searchBox = WaitUtils.waitForElement(driver, By.xpath(searchBoxXPath), Long.parseLong(ConfigReader.getProperty("wait.seconds")));
         searchBox.sendKeys(term);
     }
 
     public String getMainText() {
-        WebElement text = WaitUtils.waitForElement(driver,By.xpath(homeTextXPath), 10);
+        WebElement text = WaitUtils.waitForElement(driver,By.xpath(homeTextXPath), Long.parseLong(ConfigReader.getProperty("wait.seconds")));
         return text.getText();
         //return driver.findElement(By.xpath(homeTextXPath)).getText();
     }
