@@ -15,4 +15,4 @@ Feature: Google search and redirection to Panoscure site
     Examples:
       | searchTerm | expectedText       |
       | Home  | What's an embedded system? |
-      | Home   | What's an embedded system?|
+      | Home   | My Home 2|
