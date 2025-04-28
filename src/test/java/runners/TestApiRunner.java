@@ -11,8 +11,8 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"stepdefinitions"},
         plugin = {
                 "pretty",
-                "html:target/cucumber-html-report.html",
-                "json:target/cucumber.json"
+                "html:target/cucumber-reports/html-report-ApiRunner.html",
+                "json:target/cucumber-reports/ApiRunner.json"
         },
         monochrome = true
 )
