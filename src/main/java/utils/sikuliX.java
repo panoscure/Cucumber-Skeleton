@@ -35,9 +35,9 @@ public class sikuliX {
         String desiredFileName = "sikuliximage.png";
         File desiredFile = new File(directory, desiredFileName);
         if (chosenFile != null && chosenFile.renameTo(desiredFile)) {
-            System.out.println("Image saved successfully with desired name.");
+            Logger.info("Image saved successfully with desired name.");
         } else {
-            System.out.println("Failed to save image with desired name.");
+            Logger.info("Failed to save image with desired name.");
         }
 
         Generic.delay(8);
