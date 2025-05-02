@@ -1,4 +1,4 @@
-Feature: Google search and redirection to Panoscure site
+Feature: Panoscure Site Click Tabs and verify text 2
 
   Scenario Outline: Search for term and navigate to result
     Given I am on Panos page
