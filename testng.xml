@@ -5,7 +5,7 @@
             <class name="runners.TestRunner1"/>
             <class name="runners.TestRunner2"/>
             <class name="runners.TestApiRunner"/>
-            <!-- <class name="runners.TestApiRunner"/> -->
+            <class name="runners.TestSikuliRunner"/>
         </classes>
     </test>
 </suite>
