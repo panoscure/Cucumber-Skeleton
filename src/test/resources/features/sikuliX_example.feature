@@ -1,4 +1,4 @@
-Feature: Google search and redirection to Panoscure site
+Feature: Sikuly Example
 
   Scenario Outline: Search for term and navigate to result
     Given I am on Panos page
